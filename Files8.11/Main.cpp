@@ -1,13 +1,48 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <conio.h>
+#include "windows.h"
 
 void file_insert(std::string path, int pos, std::string str);
+
+const int tick = 100;
+int timer = 0;
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 	int n;
 	std::string path = "file.txt";
+
+	// Про проекты (projects)
+	// для понга и галаги
+	/*char key;
+	while (true) {
+		if (_kbhit()) {				// keyboard hit
+			key = _getch();
+			switch (key) {
+			case 'A': case 'a':
+				std::cout << "left\n";
+				break;
+			case 'D': case 'd':
+				std::cout << "right\n";
+				break;
+			}
+		}		
+		Sleep(tick);
+		timer += tick;
+		if (timer >= 1000) {
+			std::cout << ".\n";
+			timer = 0;
+		}
+	}*/
+	//
+	std::cout << "Введите число: ";
+	std::cin >> n;
+	system("cls");	// полная очистка консоли
+	std::cout << "Число = " << n << "\n";
+	system("pause"); // приостановка приложения
+
 
 	// Класс fstream
 	/*std::fstream file;	// позволяет и считывать, и записывать
@@ -48,7 +83,7 @@ int main() {
 	file_insert(path,n,str);*/
 
 	// Задача. Дата из файла
-	std::cout << "Задача. Дата из файла:\n";
+	/*std::cout << "Задача. Дата из файла:\n";
 	std::ifstream in;
 	in.open("date.txt");
 
@@ -68,7 +103,7 @@ int main() {
 	else
 		std::cout << "Ошибка открытия файла.\n\n";
 
-	in.close();
+	in.close();*/
 
 	return 0;
 }
